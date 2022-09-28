@@ -14,9 +14,16 @@ export class UserService {
     if(this._isLoggedIn){
       return true;
     }
-
     this.route.navigate(['/login'])
      return false;
   }
+
+  login(email:string,password:string){
+    console.log(email,password);
+    
+    this._isLoggedIn=true;
+    this.route.navigate(['/dashboard'])
+  }
+
 
 }

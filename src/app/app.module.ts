@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IfUserLogin } from './services/authGate.service';
-import { IfCanOpenLogin } from './services/loginGate.service copy';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -16,9 +18,11 @@ import { IfCanOpenLogin } from './services/loginGate.service copy';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    NgbModule,
   ],
-  providers: [IfUserLogin,IfCanOpenLogin],
+  providers: [IfUserLogin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

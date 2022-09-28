@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -7,16 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userServics:UserService,private route:Router){ }
 
   password:string='';
   email:string='';
 
   ngOnInit(): void {
+   if(this.userServics.isLoggedIn()) {
+      this.route.navigate(['/dashboard'])
+   }
   }
 
   login(){
-    
+    this.userServics.login(this.email,this.password);
   }
 
 }
