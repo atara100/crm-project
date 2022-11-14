@@ -8,13 +8,17 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IfUserLogin } from './services/authGate.service';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AccordionSidebarComponent } from './accordion-sidebar/accordion-sidebar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    AccordionSidebarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
